@@ -1,5 +1,4 @@
 <?php
-// Definindo os dados dos presidentes em um array associativo
 $presidentes = array(
     array('numero' => 16, 'nome' => 'Eurico Gaspar Dutra', 'inicio' => 1946, 'fim' => 1951),
     array('numero' => 17, 'nome' => 'Getúlio Vargas', 'inicio' => 1951, 'fim' => 1954),
@@ -9,7 +8,6 @@ $presidentes = array(
     array('numero' => 21, 'nome' => 'Juscelino Kubitschek', 'inicio' => 1956, 'fim' => 1961)
 );
 
-// Função para gerar linhas da tabela HTML
 function gerar_linha_tabela($presidente) {
     $linha = '<tr>';
     $linha .= '<td>' . $presidente['numero'] . '</td>';
@@ -20,18 +18,15 @@ function gerar_linha_tabela($presidente) {
     return $linha;
 }
 
-// Início da construção da tabela HTML
 $html = '<table border="1">';
 $html .= '<tr><th>Número</th><th>Nome</th><th>Início</th><th>Fim</th></tr>';
 
-// Percorrer a matriz de presidentes e gerar linhas da tabela
 foreach ($presidentes as $presidente) {
     $html .= gerar_linha_tabela($presidente);
 }
 
 $html .= '</table>';
 
-// Exibir a tabela HTML
 echo $html;
 ?>
 
